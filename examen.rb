@@ -1,55 +1,55 @@
-# =begin
-# Clases
-# Crear una clase CreditCard que tenga como datos la información que aparece 
-# en la tabla de ejemplo. Posteriormente crea un arreglo con cinco objetos de 
-# tarjetas de crédito e imprime la información de cada tarjeta en una tabla. 
-# Utiliza las pruebas y la tabla que se presenta de ejemplo.
-# =end
-# #Clase CreditCard
-# require 'faker'
-# class CreditCard
-#   attr_reader :name, :number, :expiration, :cvc, :status
+=begin
+Clases
+Crear una clase CreditCard que tenga como datos la información que aparece 
+en la tabla de ejemplo. Posteriormente crea un arreglo con cinco objetos de 
+tarjetas de crédito e imprime la información de cada tarjeta en una tabla. 
+Utiliza las pruebas y la tabla que se presenta de ejemplo.
+=end
+#Clase CreditCard
+require 'faker'
+class CreditCard
+  attr_reader :name, :number, :expiration, :cvc, :status
    
-#   def initialize(name, number, expiration, cvc, status)
-#     @name = name
-#     @number = number
-#     @expiration = number
-#     @cvc = cvc
-#     @status = status
-#   end
-# end
-# #Cinco instancias de CreditCard
-#    @cards = []
-#    @cards << CreditCard.new("Amex", 2345673444, 12/15, 2345, [234, 567, 456, 567, 344])
-#    @cards << CreditCard.new("ScotiaBank", 2345673744, 12/16, 2845, [234, 345, 456, 567, 344])
-#    @cards << CreditCard.new("Bancomer", 2345673444, 12/15, 2645, [234, 345, 456, 567, 344])
-#    @cards << CreditCard.new("Serfin", 2345473454, 12/20, 1345, [234, 345, 456, 567, 344])
-#    @cards << CreditCard.new("BanCoppel", 2345373464, 12/18, 2445, [567, 345, 456, 567, 344])
+  def initialize(name, number, expiration, cvc, status)
+    @name = name
+    @number = number
+    @expiration = number
+    @cvc = cvc
+    @status = status
+  end
+end
+#Cinco instancias de CreditCard
+   @cards = []
+   @cards << CreditCard.new("Amex", 2345673444, 12/15, 2345, [234, 567, 456, 567, 344])
+   @cards << CreditCard.new("ScotiaBank", 2345673744, 12/16, 2845, [234, 345, 456, 567, 344])
+   @cards << CreditCard.new("Bancomer", 2345673444, 12/15, 2645, [234, 345, 456, 567, 344])
+   @cards << CreditCard.new("Serfin", 2345473454, 12/20, 1345, [234, 345, 456, 567, 344])
+   @cards << CreditCard.new("BanCoppel", 2345373464, 12/18, 2445, [567, 345, 456, 567, 344])
 
-# #Array con cinco objetos de tarjetas de crédito
-#   @cards
+#Array con cinco objetos de tarjetas de crédito
+  @cards
 
-# #tests 
+#tests 
 
-# cards.each do |card|
-#    puts "#{card.name} responds to:"
-#    puts "\tName: #{card.respond_to?(:name) == true}"
-#    puts "\tNumber: #{card.respond_to?(:number) == true}"
-#    puts "\tExpiration: #{card.respond_to?(:expiration) == true}"
-#    puts "\tcvc: #{card.respond_to?(:cvc) == true}"
-#    puts "\tGet status: #{card.respond_to?(:status) == true}"
-#    puts "\tSet status: #{card.respond_to?(:status=) == true}"
-#    puts "\n\n"
-# end
+@cards.each do |card|
+   puts "#{card.name} responds to:"
+   puts "\tName: #{card.respond_to?(:name) == true}"
+   puts "\tNumber: #{card.respond_to?(:number) == true}"
+   puts "\tExpiration: #{card.respond_to?(:expiration) == true}"
+   puts "\tcvc: #{card.respond_to?(:cvc) == true}"
+   puts "\tGet status: #{card.respond_to?(:status) == true}"
+   puts "\tSet status: #{card.respond_to?(:status=) == true}"
+   puts "\n\n"
+end
   
-#   def show_card_data
-#       puts "|     name     |     number     |    expiration  |      cvc      |           status          |"
-#       puts "-" * 94
-#       @cards.each_with_index do |card, i|
-#       puts "|   #{card.name}       |    #{card.number}  |      #{card.expiration}     |      #{card.cvc}     | #{card.status} |"
-#       end
-#   end
-#   show_card_data
+  def show_card_data
+      puts "|     name     |     number     |    expiration  |      cvc      |           status          |"
+      puts "-" * 94
+      @cards.each_with_index do |card, i|
+      puts "|   #{card.name}       |    #{card.number}  |      #{card.expiration}     |      #{card.cvc}     | #{card.status} |"
+      end
+  end
+  show_card_data
 
 
 
@@ -60,118 +60,118 @@
 
 
 
-# #EXCERCISE 2
-# =begin
-# Herencia
-# Crea las clases Athlete, Runner, Swimmer y Cyclist, trata de relacionarlas 
-# a través de herencia. Cada atleta podrá incrementar el total de la distancia 
-# recorrida y el tiempo total de ejercicio. Al final cada tipo de atleta deberá 
-# mostrar la distancia total recorrida, el tiempo total y la velocidad obtenida. 
-# Es importante considerar los casos cuando la distancia recorrida es igual a 0 y 
-# mayor que 0. Todas las pruebas deberán pasar.
-# =end
-# #Athlete class
-# class Athlete
+#EXCERCISE 2
+=begin
+Herencia
+Crea las clases Athlete, Runner, Swimmer y Cyclist, trata de relacionarlas 
+a través de herencia. Cada atleta podrá incrementar el total de la distancia 
+recorrida y el tiempo total de ejercicio. Al final cada tipo de atleta deberá 
+mostrar la distancia total recorrida, el tiempo total y la velocidad obtenida. 
+Es importante considerar los casos cuando la distancia recorrida es igual a 0 y 
+mayor que 0. Todas las pruebas deberán pasar.
+=end
+#Athlete class
+class Athlete
 
-#   def initialize(distance= 0, time=0)
-#     @distance = distance
-#     @time = time
-#   end
+  def initialize(distance= 0, time=0)
+    @distance = distance
+    @time = time
+  end
 
-#   #método para validar tiempo
-#   def total_time
+  #método para validar tiempo
+  def total_time
 
-#   end
-#   def total_time=(new_time)
-#     @time = new_time
-#   end
+  end
+  def total_time=(new_time)
+    @time = new_time
+  end
    
-#   def total_distance
-#   end
+  def total_distance
+  end
 
-#   def total_distance=(new_distance)
-#     @distance = new_distance
-#   end
-#   #método para hacer ejercicio
-#   def new_workout(distance_, time_)
-#     @distance_ = @distance += distance_
-#     @time_ = @time += time_
-#   end
+  def total_distance=(new_distance)
+    @distance = new_distance
+  end
+  #método para hacer ejercicio
+  def new_workout(distance_, time_)
+    @distance_ = @distance += distance_
+    @time_ = @time += time_
+  end
 
-#   #método para obtener velocidad del atleta
-#   def speed
-#   end
+  #método para obtener velocidad del atleta
+  def speed
+  end
 
-#   def speed_record
-#   end
+  def speed_record
+  end
 
-# end
+end
 
-# #Runner class
-# class Runner < Athlete
-#   def run
-#      if @time > 0
-#     @speed = (@distance.to_f / @time.to_f).round(2)
-#       "Ran #{@distance} meters, time: #{@time} seconds, speed: #{@speed} m/s"
-#     else
-#       "Ran 0 meters, time: 0 seconds, speed: 0 m/s"
-#     end
-#   end
-# end
+#Runner class
+class Runner < Athlete
+  def run
+     if @time > 0
+    @speed = (@distance.to_f / @time.to_f).round(2)
+      "Ran #{@distance} meters, time: #{@time} seconds, speed: #{@speed} m/s"
+    else
+      "Ran 0 meters, time: 0 seconds, speed: 0 m/s"
+    end
+  end
+end
 
-# #Swimmer class
-# class Swimmer < Athlete
-#   def swim
-#     @speed = (@distance.to_f / @time.to_f).round(2)
-#     "Swam #{@distance} meters, time: #{@time} seconds, speed: #{@speed} m/s"
-#   end
-# end
+#Swimmer class
+class Swimmer < Athlete
+  def swim
+    @speed = (@distance.to_f / @time.to_f).round(2)
+    "Swam #{@distance} meters, time: #{@time} seconds, speed: #{@speed} m/s"
+  end
+end
 
-# #Cyclist class
-# class Cyclist < Athlete
-#   def ride_bike
-#   end
-# end
+#Cyclist class
+class Cyclist < Athlete
+  def ride_bike
+  end
+end
 
-# #tests
+#tests
 
-# #instancias de atletas con distancia en metros
-# runner = Runner.new()
-# swimmer = Swimmer.new(50, 10)
-# cyclist = Cyclist.new(70, 27)
+#instancias de atletas con distancia en metros
+runner = Runner.new()
+swimmer = Swimmer.new(50, 10)
+cyclist = Cyclist.new(70, 27)
 
-# athletes = [runner, swimmer, cyclist]
+athletes = [runner, swimmer, cyclist]
 
-# athletes.each do |athlete|
-#   #¿qué tipo de atleta es?
-#   puts "#{athlete.class} responds to:"
-#   puts "\tAthlete speed: #{athlete.respond_to?(:speed) == true}"
-#   puts "\tGet Athlete time: #{athlete.respond_to?(:total_time) == true}"
-#   puts "\tSet Athlete time: #{athlete.respond_to?(:total_time=) == true}"
-#   puts "\tSpeed record: #{athlete.respond_to?(:speed_record) == true}"
-#   puts "\tGet Distance: #{athlete.respond_to?(:total_distance) == true}"
-#   puts "\tSet Distance: #{athlete.respond_to?(:total_distance=) == true}"
-#   puts "\trun method: #{athlete.respond_to?(:run) == true}" if athlete == runner
-#   puts "\tswim method: #{athlete.respond_to?(:swim) == true}" if athlete == swimmer
-#   puts "\tride_bike method: #{athlete.respond_to?(:ride_bike) == true}" if athlete == cyclist
-#   puts "\n\n"
-# end
+athletes.each do |athlete|
+  #¿qué tipo de atleta es?
+  puts "#{athlete.class} responds to:"
+  puts "\tAthlete speed: #{athlete.respond_to?(:speed) == true}"
+  puts "\tGet Athlete time: #{athlete.respond_to?(:total_time) == true}"
+  puts "\tSet Athlete time: #{athlete.respond_to?(:total_time=) == true}"
+  puts "\tSpeed record: #{athlete.respond_to?(:speed_record) == true}"
+  puts "\tGet Distance: #{athlete.respond_to?(:total_distance) == true}"
+  puts "\tSet Distance: #{athlete.respond_to?(:total_distance=) == true}"
+  puts "\trun method: #{athlete.respond_to?(:run) == true}" if athlete == runner
+  puts "\tswim method: #{athlete.respond_to?(:swim) == true}" if athlete == swimmer
+  puts "\tride_bike method: #{athlete.respond_to?(:ride_bike) == true}" if athlete == cyclist
+  puts "\n\n"
+end
 
-# #test for runner
+#test for runner
 
-# #test para runner con distancia = 0
-# p runner.run == "Ran 0 meters, time: 0 seconds, speed: 0 m/s"
-# #test para runner al hacer ejercicio, incrementa distancia = 20 metros y tiempo = 7 segundos
-# runner.new_workout(20, 7) 
-# #test para runner con distancia = 20 metros y tiempo = 7 segundos
-# p runner.run == "Ran 20 meters, time: 7 seconds, speed: 2.86 m/s"
+#test para runner con distancia = 0
+p runner.run == "Ran 0 meters, time: 0 seconds, speed: 0 m/s"
+#test para runner al hacer ejercicio, incrementa distancia = 20 metros y tiempo = 7 segundos
+runner.new_workout(20, 7) 
+#test para runner con distancia = 20 metros y tiempo = 7 segundos
+p runner.run == "Ran 20 meters, time: 7 seconds, speed: 2.86 m/s"
 
-# #test para swimmer con distancia = 50
-# p swimmer.swim == "Swam 50 meters, time: 10 seconds, speed: 5.0 m/s"
+#test para swimmer con distancia = 50
+p swimmer.swim == "Swam 50 meters, time: 10 seconds, speed: 5.0 m/s"
 
-# swimmer.new_workout(30, 12)
+swimmer.new_workout(30, 12)
 
-# p swimmer.swim
+p swimmer.swim
 
 
 
@@ -236,7 +236,7 @@ class Team
   #método para calcular promedio de velocidad del equipo 
   def average_team_speed
     team_velocity = 0
-    @arr_cars.each{|car| team_velocity += car.velocity }
+    @arr_cars.each{ |car| team_velocity += car.velocity }
     "The average speed is: #{team_velocity / DISTANCE.to_f} m/s"
   end
 end
